@@ -1,0 +1,45 @@
+[user]
+    name = Eduardo Ojeda
+    email = eduardo.ojeda@researchgate.net
+[core]
+    editor = vim
+    autocrlf = false
+    eol = lf
+[color]
+    ui = true
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[pull]
+    rebase = true
+[branch]
+    autosetuprebase = always
+[push]
+    default = simple
+[diff]
+    compactionHeuristic = true
+[alias]
+    pick = !gitpick
+    standup = !git-standup
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log -p
+    llog = log origin/master..HEAD
+    plog = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative

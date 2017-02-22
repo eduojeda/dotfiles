@@ -5,12 +5,15 @@ export CLICOLOR=1
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
+    . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
 fi
+GIT_PS1_SHOWDIRTYSTATE=true
+export PS1='\[\033[01;31m\]\u\[\033[01;33m\]@\[\033[01;32m\]\h \[\033[01;35m\]\w\[\033[01;33m\]$(__git_ps1 " (%s)") \$ \[\033[00m\]'
 
-#export PS1='\[\033[01;31m\]\u\[\033[01;33m\]@\[\033[01;32m\]\h \[\033[01;35m\]\w\[\033[01;33m\]$(__git_ps1 " (%s)") \$ \[\033[00m\]'
-export PS1='\[\033[01;31m\]\u\[\033[01;33m\]@\[\033[01;32m\]\h \[\033[01;35m\]\w\[\033[01;33m\]$ \[\033[00m\]'
 export TERM=xterm-color
+
 export PATH='/usr/local/bin:'$PATH
+
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
@@ -18,7 +21,8 @@ export NVM_DIR="$HOME/.nvm"
 alias ll='ls -lah'
 alias vup='vagrant up --no-provision'
 alias vssh='vagrant ssh'
-alias pull='git stash; git pull; git stash pop;'
+alias pull='git fetch && git merge --ff-only origin/master' #should be similar to 'git stash; git pull; git stash pop;'
+
 
 export HISTSIZE=1000000
 export HISTTIMEFORMAT="%d/%m/%y %T "
