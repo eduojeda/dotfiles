@@ -21,7 +21,7 @@ export NVM_DIR="$HOME/.nvm"
 alias ll='ls -lah'
 alias vup='vagrant up --no-provision'
 alias vssh='vagrant ssh'
-alias pull='git fetch && git merge --ff-only origin/master' #should be similar to 'git stash; git pull; git stash pop;'
+#alias pull='git fetch && git merge --ff-only origin/master'
 
 
 export HISTSIZE=1000000

@@ -26,6 +26,8 @@
     untracked = cyan
 [pull]
     rebase = true
+[rebase]
+    autostash = true
 [branch]
     autosetuprebase = always
 [push]
